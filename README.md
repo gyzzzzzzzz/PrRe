@@ -5,10 +5,6 @@ PL-FSCIL: Harnessing the Power of Prompts for Few-Shot Class-Incremental Learnin
 ## Abstract
 Few-Shot Class-Incremental Learning (FSCIL) aims to enable deep neural networks to learn new tasks incrementally from a small number of labeled samples without forgetting previously learned tasks, closely mimicking human learning patterns. In this paper, we propose a novel approach called Prompt Learning for FSCIL (PL-FSCIL), which harnesses the power of prompts in conjunction with a pre-trained Vision Transformer (ViT) model to address the challenges of FSCIL effectively. Our work is the first to incorporate prompt learning for FSCIL tasks, offering a new research direction in this area. PL-FSCIL consists of two distinct prompts: the Domain Prompt and the FSCIL Prompt. Both are vectors that augment the model by embedding themselves into the attention layer of the ViT model. In particular, the Domain Prompt assists the ViT model in adapting to new data domains. The task-specific FSCIL Prompt, combined with a prototype classifier, amplifies the model's ability to effectively handle FSCIL tasks. We validate the effectiveness of PL-FSCIL on widely used benchmark datasets such as CIFAR-100 and CUB-200, achieving competitive performance and demonstrating its promising potential for real-world applications where high-quality data is often scarce.
 
-- The whole learning pipline of our model:
-<p align="center">
-  <img width=700 src=".github/model.jpg">
-</p>
 
 ## Environment
 The system I used and tested in
@@ -46,14 +42,5 @@ python -m torch.distributed.launch  --nproc_per_node=1 --use_env --master_port 2
 
 
 
-## Results
-- Evaluation on CUB-200:
-<p align="center">
-  <img heigth=100 src=".github/CUB200.jpg">
-</p>
 
-- Evaluation on CUB-CIFAR-100:
-<p align="center">
-  <img heigth=100 src=".github/CIFAR100.jpg">
-</p>
 
